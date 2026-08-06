@@ -1,6 +1,6 @@
 {
   "name": "anychar",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "stldo (https://github.com/stldo)",
   "description": "Tiny, dependency-free generator for sequential string IDs",
   "keywords": [

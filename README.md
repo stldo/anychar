@@ -1,6 +1,7 @@
-# anychar ![License][1] [![npm][2]][3]
+# anychar ![License][1] [![Build status][2]][3] [![npm][4]][5]
 
 - **Incremental string generator** for producing sequential, unique IDs
+- **ES6-compatible** for use in all modern environments
 - **TypeScript-ready**, shipped with built-in type definitions
 - Fully **customizable** character set
 - Can be resumed from **any starting ID**
@@ -80,6 +81,8 @@ anyChar.next();
 Copyright (C) 2026-present stldo
 
 [1]: https://img.shields.io/github/license/stldo/anychar
-[2]: https://img.shields.io/npm/v/anychar
-[3]: https://www.npmjs.com/package/anychar
+[2]: https://img.shields.io/github/actions/workflow/status/stldo/anychar/validate.yml?branch=main
+[3]: https://github.com/stldo/anychar/actions/workflows/validate.js.yml
+[4]: https://img.shields.io/npm/v/anychar
+[5]: https://www.npmjs.com/package/anychar
 [license]: ./LICENSE

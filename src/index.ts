@@ -15,7 +15,7 @@ function* generator({
       ? startAt.split("").map((char) => chars.indexOf(char))
       : [0];
 
-  if (indexes.includes(-1)) {
+  if (indexes.indexOf(-1) !== -1) {
     indexes = [0];
   }
 

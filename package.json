@@ -4,29 +4,32 @@
   "author": "stldo (https://github.com/stldo)",
   "description": "Tiny, dependency-free generator for sequential string IDs",
   "keywords": [
-    "sequence",
-    "string",
-    "strinc",
-    "incstr",
-    "id",
-    "ids",
-    "identifier",
     "base-n",
-    "incremental-string",
-    "incremental-id",
-    "incremental",
-    "increment",
-    "sequential",
+    "counter",
     "generator",
+    "id",
     "id-generator",
-    "unique",
-    "unique-id",
-    "nextid",
+    "identifier",
+    "ids",
+    "incstr",
+    "increment",
+    "incremental",
+    "incremental-id",
+    "incremental-string",
     "next-id",
-    "counter"
+    "nextid",
+    "sequence",
+    "sequential",
+    "strinc",
+    "string",
+    "unique",
+    "unique-id"
   ],
   "license": "MIT",
-  "repository": "github:stldo/anychar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stldo/anychar.git"
+  },
   "devDependencies": {
     "@biomejs/biome": "2.5.7",
     "es-check": "^9.6.4",
@@ -34,7 +37,6 @@
     "lint-staged": "^17.3.0",
     "publint": "^0.3.23",
     "tsdown": "^0.22.14",
-    "type-fest": "^5.8.0",
     "typescript": "^7.0.2"
   },
   "engines": {
@@ -47,13 +49,16 @@
     },
     "./package.json": "./package.json"
   },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "sideEffects": false,
   "type": "module",
+  "types": "./dist/index.d.cts",
   "scripts": {
     "build": "tsdown",
     "check": "npm run check:cjs && npm run check:mjs && npm run check:publint",
-    "check:cjs": "es-check es2022 './dist/*.cjs'",
-    "check:mjs": "es-check es2022 './dist/*.mjs' --module",
+    "check:cjs": "es-check es6 './dist/*.cjs'",
+    "check:mjs": "es-check es6 './dist/*.mjs' --module",
     "check:publint": "publint",
     "format": "biome check --no-errors-on-unmatched --write",
     "lint": "biome check --no-errors-on-unmatched",
@@ -63,8 +68,5 @@
     "preversion": "npm run validate",
     "typecheck": "tsc --noEmit",
     "validate": "npm run typecheck && npm run lint && npm run build && npm run check"
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.cts"
+  }
 }

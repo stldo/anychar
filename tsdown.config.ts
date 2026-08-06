@@ -5,7 +5,6 @@ export default defineConfig({
     onlyBundle: [],
   },
   dts: true,
-  entry: ["src/*.ts"],
   exports: true,
   format: ["cjs", "esm"],
   minify: true,

@@ -6,15 +6,12 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedDeclarations": true,
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "noEmit": true,
-    "paths": {
-      "#/*": ["./src/*"]
-    },
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2022"
+    "target": "es6"
   },
   "exclude": ["dist", "node_modules", "**/#*", "**/*.#*"]
 }

@@ -1,0 +1,70 @@
+{
+  "name": "anychar",
+  "version": "0.0.1",
+  "author": "stldo (https://github.com/stldo)",
+  "description": "Tiny, dependency-free generator for sequential string IDs",
+  "keywords": [
+    "sequence",
+    "string",
+    "strinc",
+    "incstr",
+    "id",
+    "ids",
+    "identifier",
+    "base-n",
+    "incremental-string",
+    "incremental-id",
+    "incremental",
+    "increment",
+    "sequential",
+    "generator",
+    "id-generator",
+    "unique",
+    "unique-id",
+    "nextid",
+    "next-id",
+    "counter"
+  ],
+  "license": "MIT",
+  "repository": "github:stldo/anychar",
+  "devDependencies": {
+    "@biomejs/biome": "2.5.7",
+    "es-check": "^9.6.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.3.0",
+    "publint": "^0.3.23",
+    "tsdown": "^0.22.14",
+    "type-fest": "^5.8.0",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "check": "npm run check:cjs && npm run check:mjs && npm run check:publint",
+    "check:cjs": "es-check es2022 './dist/*.cjs'",
+    "check:mjs": "es-check es2022 './dist/*.mjs' --module",
+    "check:publint": "publint",
+    "format": "biome check --no-errors-on-unmatched --write",
+    "lint": "biome check --no-errors-on-unmatched",
+    "postversion": "git push && git push --tags",
+    "prepack": "npm run validate",
+    "prepare": "husky",
+    "preversion": "npm run validate",
+    "typecheck": "tsc --noEmit",
+    "validate": "npm run typecheck && npm run lint && npm run build && npm run check"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.cts"
+}
